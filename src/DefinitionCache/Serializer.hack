@@ -304,7 +304,7 @@ class HTMLPurifier_DefinitionCache_Serializer {
                 //     E_USER_WARNING
                 // );
                 return false;
-            } elseif (!$this->_testPermissions($base, $chmod)) {
+            } else if (!$this->_testPermissions($base, $chmod)) {
                 return false;
             }
             if (!\mkdir($directory, $chmod) && !\is_dir($directory)) {
@@ -317,7 +317,7 @@ class HTMLPurifier_DefinitionCache_Serializer {
             if (!$this->_testPermissions($directory, $chmod)) {
                 return false;
             }
-        } elseif (!$this->_testPermissions($directory, $chmod)) {
+        } else if (!$this->_testPermissions($directory, $chmod)) {
             return false;
         }
         return true;
@@ -349,7 +349,7 @@ class HTMLPurifier_DefinitionCache_Serializer {
                 if (\chmod($dir, $chmod)) {
                     return true;
                 }
-            } elseif (\filegroup($dir) === \posix_getgid()) {
+            } else if (\filegroup($dir) === \posix_getgid()) {
                 $chmod = $chmod | 0070;
             } else {
                 // PHP's probably running as nobody, so we'll

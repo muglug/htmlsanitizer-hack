@@ -22,7 +22,7 @@ class HTMLPurifier_URISchemeRegistry {
         $instance = null;
         if ($prototype !== null) {
             $instance = $prototype;
-        } elseif ($instance === null || $prototype == true) {
+        } else if ($instance === null || $prototype == true) {
             $instance = new HTMLPurifier_URISchemeRegistry();
         }
         return $instance;
